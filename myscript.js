@@ -7,9 +7,15 @@ const saveNote = ()=>{
     const notes = document.querySelectorAll('.notes #textarea');
     const data = [];
     notes.forEach((n)=>{
-        data.push(n.value);
-    })
-    localStorage.setItem("notes",JSON.stringify(data));
+        if (!(n.value=="")) {
+            data.push(n.value);            
+        }
+            
+            
+        })
+    
+            localStorage.setItem("notes",JSON.stringify(data));
+
 }
 
 function createNewNote(text="") {
